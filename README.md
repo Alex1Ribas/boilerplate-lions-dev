@@ -1,3 +1,6 @@
+
+>Obs: Este boilerplate foi criado e adaptado para atender as necessidades de aprendizado dos alunos da LionsDev.
+
 # 🧱 Estrutura do Projeto
 
 Este projeto segue o padrão **MVC (Model–View–Controller)** com **camadas adicionais de Service e Repository**, muito comum em aplicações **Node.js + Express + MongoDB**.
