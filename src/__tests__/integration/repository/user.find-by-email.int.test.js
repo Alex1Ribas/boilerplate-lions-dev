@@ -8,7 +8,7 @@ beforeEach(async() =>{
     userModel.deleteMany([])
 })
 describe('when we try find corret user by email', () =>{
-    it('return corret user', async () =>{
+    it('should return corret user', async () =>{
         const payload = {
             name: 'FindByEmail Rocha',
             email: `useremail-${Date.now()}@example.com`,
