@@ -15,8 +15,9 @@ export default {
   updateById(id, data) {
     return User.findByIdAndUpdate(id, data, { new: true, runValidators: true });
   },
-  deleteById(id) {
-    return User.findByIdAndDelete(id);
+  async deleteById(id) {
+    await User.findByIdAndDelete(id);
+    return null
   },
   findByEmail(email) {
     return User.findOne({ email });
