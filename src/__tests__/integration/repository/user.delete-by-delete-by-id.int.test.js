@@ -10,8 +10,9 @@ describe('when we try delete a user by ID',  () => {
         }
 
         const create = await userModel.create(payload)
-        const find = await userRepository.deleteById(create._id)
+        const del = await userRepository.deleteById(create._id)
+        const find = await userRepository.findById(create._id)
 
-        expect(find.lenght === 0)
+        expect(find).toBeNull()
     })
 })
