@@ -1,6 +1,12 @@
-import userRepository from '../../../repositories/user.repository.js';
+import userModel from "../../../models/user.model";
+import userRepository from "../../../repositories/user.repository";
+beforeAll( async () =>{
+    userModel.init()
+})
 
-
+beforeEach(async() =>{
+    userModel.deleteMany([])
+})
 describe ('when we try to create a user with an email that already exists', () => {
   it ('throws a validation error', async () => {
     const userData = {
