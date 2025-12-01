@@ -4,7 +4,11 @@ export default {
   async create(req, res, next) {
     try {
       const user = await userService.createUser(req.body);
-      res.status(201).json(user);
+
+      const userObject = typeof user.toObject === 'function' ? user.toObject() : user;//valida se o usuario é um objeto
+      const { password, ...userWithoutPassword } = userObject;//remove a senha do usuario criado
+
+      res.status(201).json(userWithoutPassword);
     } catch (error) {
       next(error);
     }
